@@ -1,0 +1,16 @@
+D:\Git\BYT\task-4-5\task-4-5\bin\Debug\net5.0\task-4-5.exe
+D:\Git\BYT\task-4-5\task-4-5\bin\Debug\net5.0\task-4-5.deps.json
+D:\Git\BYT\task-4-5\task-4-5\bin\Debug\net5.0\task-4-5.runtimeconfig.json
+D:\Git\BYT\task-4-5\task-4-5\bin\Debug\net5.0\task-4-5.runtimeconfig.dev.json
+D:\Git\BYT\task-4-5\task-4-5\bin\Debug\net5.0\task-4-5.dll
+D:\Git\BYT\task-4-5\task-4-5\bin\Debug\net5.0\ref\task-4-5.dll
+D:\Git\BYT\task-4-5\task-4-5\bin\Debug\net5.0\task-4-5.pdb
+D:\Git\BYT\task-4-5\task-4-5\obj\Debug\net5.0\task-4-5.csproj.AssemblyReference.cache
+D:\Git\BYT\task-4-5\task-4-5\obj\Debug\net5.0\task-4-5.GeneratedMSBuildEditorConfig.editorconfig
+D:\Git\BYT\task-4-5\task-4-5\obj\Debug\net5.0\task-4-5.AssemblyInfoInputs.cache
+D:\Git\BYT\task-4-5\task-4-5\obj\Debug\net5.0\task-4-5.AssemblyInfo.cs
+D:\Git\BYT\task-4-5\task-4-5\obj\Debug\net5.0\task-4-5.csproj.CoreCompileInputs.cache
+D:\Git\BYT\task-4-5\task-4-5\obj\Debug\net5.0\task-4-5.dll
+D:\Git\BYT\task-4-5\task-4-5\obj\Debug\net5.0\ref\task-4-5.dll
+D:\Git\BYT\task-4-5\task-4-5\obj\Debug\net5.0\task-4-5.pdb
+D:\Git\BYT\task-4-5\task-4-5\obj\Debug\net5.0\task-4-5.genruntimeconfig.cache
