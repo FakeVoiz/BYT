@@ -18,8 +18,10 @@ public class Money implements Comparable {
 	 * Return the amount of money.
 	 * @return Amount of money in Double type.
 	 */
-	public Integer getAmount() {
-		return null;
+//	public Integer getAmount() {
+	public Double getAmount() {
+//		Implementing method by returning amount in proper type
+		return (double)amount;
 	}
 	
 	/**
@@ -27,7 +29,8 @@ public class Money implements Comparable {
 	 * @return Currency object representing the currency of this Money
 	 */
 	public Currency getCurrency() {
-		return null;
+//		Implementing method by returning currency
+		return currency;
 	}
 	
 	/**
@@ -37,7 +40,8 @@ public class Money implements Comparable {
 	 *  @return String representing the amount of Money.
 	 */
 	public String toString() {
-		return null;
+//		Implementing method by returning right string
+		return String.format("(%b) (%b)", amount, currency.getName());
 	}
 	
 	/**
@@ -45,7 +49,8 @@ public class Money implements Comparable {
 	 * @return The value of the Money in the "universal currency".
 	 */
 	public Integer universalValue() {
-		return null;
+//		Implementing method by calculating and returning universal currency
+		return currency.universalValue(amount);
 	}
 	
 	/**
@@ -54,7 +59,8 @@ public class Money implements Comparable {
 	 * @return A Boolean indicating if the two monies are equal.
 	 */
 	public Boolean equals(Money other) {
-		return null;
+		// Comparing the universal values and returning the result based on that
+		return Math.abs(universalValue() - other.universalValue()) < 0.00001;
 	}
 	
 	/**
@@ -64,7 +70,10 @@ public class Money implements Comparable {
 	 * (Remember to convert the other Money before adding the amounts)
 	 */
 	public Money add(Money other) {
-		return null;
+//		Calculating amount in current currency
+		var amountInCurrentCurrency = amount + currency.valueInThisCurrency(other.amount, other.currency);
+//		Returning result
+		return new Money(amountInCurrentCurrency, currency);
 	}
 
 	/**
@@ -74,7 +83,10 @@ public class Money implements Comparable {
 	 * (Again, remember converting the value of the other Money to this Currency)
 	 */
 	public Money sub(Money other) {
-		return null;
+//		Calculating amount in current currency
+		var amountInCurrentCurrency = amount - currency.valueInThisCurrency(other.amount, other.currency);
+//		Returning result
+		return new Money(amountInCurrentCurrency, currency);
 	}
 	
 	/**
@@ -82,14 +94,16 @@ public class Money implements Comparable {
 	 * @return True if the amount of this Money is equal to 0.0, False otherwise
 	 */
 	public Boolean isZero() {
-		return null;
+//		Checking if amount equals to zero
+		return getAmount() == 0.0;
 	}
 	/**
 	 * Negate the amount of money, i.e. if the amount is 10.0 SEK the negation returns -10.0 SEK
 	 * @return A new instance of the money class initialized with the new negated money amount.
 	 */
 	public Money negate() {
-		return null;
+//		Negating amount and returning new Money with the same currency
+		return new Money(-amount, currency);
 	}
 	
 	/**
@@ -102,6 +116,11 @@ public class Money implements Comparable {
 	 * A positive integer if this Money is more valuiable than the other Money.
 	 */
 	public int compareTo(Object other) {
-		return -1;
+//		Checking if comparison is done to a proper type
+		assert (other instanceof Money) : String.format("Unable compere to object of type %b", other.getClass());
+//		Casting to the Money type for future comparison
+		var otherMoney = (Money)other;
+//		Calculating and returning difference in universal values
+		return universalValue() - otherMoney.universalValue();
 	}
 }

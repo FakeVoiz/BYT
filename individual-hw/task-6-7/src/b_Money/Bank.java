@@ -85,7 +85,7 @@ public class Bank {
 	 * @return Balance of the account
 	 * @throws AccountDoesNotExistException If the account does not exist
 	 */
-	public Integer getBalance(String accountid) throws AccountDoesNotExistException {
+	public Double getBalance(String accountid) throws AccountDoesNotExistException {
 		if (!accountlist.containsKey(accountid)) {
 			throw new AccountDoesNotExistException();
 		}

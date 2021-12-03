@@ -24,15 +24,19 @@ public class Currency {
 	 * @param amount An amount of cash of this currency.
 	 * @return The value of amount in the "universal currency"
 	 */
+//	public Integer universalValue(Integer amount) {
+//	Changing return type to double for proper universal value calculation
 	public Integer universalValue(Integer amount) {
-		return null;
+//		Calculating and returning proper value
+		return (int)(amount * rate);
 	}
 
 	/** Get the name of this Currency.
 	 * @return name of Currency
 	 */
 	public String getName() {
-		return null;
+//		Returning name of the currency
+		return name;
 	}
 	
 	/** Get the rate of this Currency.
@@ -40,7 +44,8 @@ public class Currency {
 	 * @return rate of this Currency
 	 */
 	public Double getRate() {
-		return null;
+//		Returning rate
+		return rate;
 	}
 	
 	/** Set the rate of this currency.
@@ -48,7 +53,8 @@ public class Currency {
 	 * @param rate New rate for this Currency
 	 */
 	public void setRate(Double rate) {
-		
+//		Setting rate
+		this.rate = rate;
 	}
 	
 	/** Convert an amount from another Currency to an amount in this Currency
@@ -57,6 +63,11 @@ public class Currency {
 	 * @param othercurrency The other Currency
 	*/
 	public Integer valueInThisCurrency(Integer amount, Currency othercurrency) {
-		return null;
+//		Implementing method by calculating universal value and finding value of the current currency
+		var universalValue = othercurrency.universalValue(amount);
+		var valueInCurrentCurrency = Math.round(universalValue / rate);
+
+//		Returning value in this currency
+		return (int)valueInCurrentCurrency;
 	}
 }
