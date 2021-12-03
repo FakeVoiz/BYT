@@ -3,11 +3,15 @@ package b_Money;
 import java.util.Hashtable;
 
 public class Account {
+//	Adding name of the account
+	private String name;
 	private Money content;
 	private Hashtable<String, TimedPayment> timedpayments = new Hashtable<String, TimedPayment>();
 
 	Account(String name, Currency currency) {
 		this.content = new Money(0, currency);
+//		Assigning name
+		this.name = name;
 	}
 
 	/**
@@ -45,7 +49,9 @@ public class Account {
 	 */
 	public void tick() {
 		for (TimedPayment tp : timedpayments.values()) {
-			tp.tick(); tp.tick();
+			tp.tick();
+//			tp.tick();
+//			Removing extra tick
 		}
 	}
 	
@@ -71,6 +77,12 @@ public class Account {
 	 */
 	public Money getBalance() {
 		return content;
+	}
+
+	//Adding name getter
+	public String getName()
+	{
+		return name;
 	}
 
 	/* Everything below belongs to the private inner class, TimedPayment */

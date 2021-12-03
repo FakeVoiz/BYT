@@ -9,22 +9,32 @@ public class AccountTest {
 	Bank Nordea;
 	Bank DanskeBank;
 	Bank SweBank;
-	Account testAccount;
+	Account testAccountA, testAccountB;
 	
 	@Before
 	public void setUp() throws Exception {
 		SEK = new Currency("SEK", 0.15);
 		SweBank = new Bank("SweBank", SEK);
 		SweBank.openAccount("Alice");
-		testAccount = new Account("Hans", SEK);
-		testAccount.deposit(new Money(10000000, SEK));
+
+		testAccountA = new Account("Hans", SEK);
+		testAccountA.deposit(new Money(10000000, SEK));
+		testAccountB = new Account("Alice", SEK);
+		testAccountB.deposit(new Money(10000000, SEK));
 
 		SweBank.deposit("Alice", new Money(1000000, SEK));
 	}
 	
 	@Test
 	public void testAddRemoveTimedPayment() {
-		fail("Write test case here");
+//		Creating time payment
+		testAccountA.addTimedPayment("0", 0, 1, new Money(666, SEK), SweBank, testAccountB.getName());
+//		Testing if time payment was created
+		assertTrue(testAccountA.timedPaymentExists("0"));
+//		Removing time payment
+		testAccountA.removeTimedPayment("0");
+//		Testing if time payment was removed
+		assertFalse(testAccountA.timedPaymentExists("0"));
 	}
 	
 	@Test
